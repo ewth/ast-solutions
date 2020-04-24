@@ -16,13 +16,67 @@ using System.Windows.Shapes;
 namespace AstSolutions
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// The general approach here is to move the "interesting" parts out to classes, and leave just the bulk of the UI work in MainWindow.xaml.cs.
+    /// This isn't strictly required in a small prototype-ish program like this, but makes it easier to review in my opinion.
     /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
+
+            // Generate some randomish numbers for 1
+            var random = new Random();
+            var randomNumbers = new List<int>();
+
+            // 6 was specially chosen by randomly dragging a textbox and it happened to fit 6 lines. SCIENCE.
+            for (var i = 0; i < 6; i++)
+            {
+                randomNumbers.Add(random.Next(1,99));
+            }
+
+            TextLargestSmallest.Text = string.Join("\r\n", randomNumbers);
+        }
+
+        /// <summary>
+        /// Find largest and smallest integer from text field.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// <remarks>Question didn't specify integers, only numbers. But for simplicity, numbers = integers for this purpose.</remarks>
+        private void ButtonLargestSmallestProcess_Click(object sender, RoutedEventArgs e)
+        {
+
+
+            InterestingParts.LargestSmallest largestSmallest;
+            int method = RadioLargestSmallestMethod1.IsChecked == true ? 1 :
+                RadioLargestSmallestMethod2.IsChecked == true ? 2 :
+                RadioLargestSmallestMethod3.IsChecked == true ? 3 : 1;
+
+            // Use of try...catch here is more to keep MessageBox within this class than because I'm concerned about exceptions
+            try
+            {
+                largestSmallest = InterestingParts.FindLargestSmallest(TextLargestSmallest.Text, method);
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(this, exception.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            LabelLargestSmallestResult.Content =
+                $"Method {method}: Largest: {largestSmallest.Largest}, Smallest: {largestSmallest.Smallest}";
+
+        }
+
+        /// <summary>
+        /// Just pass on click event to Process button.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RadioLargestSmallestMethod1_OnClick(object sender, RoutedEventArgs e)
+        {
+            ButtonLargestSmallestProcess_Click(sender,e);
         }
     }
 }
