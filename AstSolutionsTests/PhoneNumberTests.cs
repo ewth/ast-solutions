@@ -177,5 +177,19 @@ namespace AstSolutionsTests
             Assert.IsFalse(isValid);
         }
 
+        [TestMethod]
+        public void PhoneNumber_CheckBadPhoneNumberContainsLetters_ShouldReturnFalse()
+        {
+            // Arrange
+            var phoneNumber = "0412 123a123";
+
+            // Act
+            var isValid = PhoneNumber.IsValidPhonenumber(phoneNumber);
+
+            // Assert
+            Assert.IsFalse(isValid);
+        }
+
+
     }
 }
