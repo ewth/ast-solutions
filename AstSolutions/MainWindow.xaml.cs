@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -44,9 +45,10 @@ namespace AstSolutions
         /// <remarks>Question didn't specify integers, only numbers. But for simplicity, numbers = integers for this purpose.</remarks>
         private void ButtonLargestSmallestProcess_Click(object sender, RoutedEventArgs e)
         {
+            // Declare (but don't instantiate) collection
+            LargestSmallest.LargestSmallestResult largestSmallest;
 
-
-            LargestSmallest.LargestSmallestCollection largestSmallest;
+            // Determine method to use depending on radio button choice
             int method = RadioLargestSmallestMethod1.IsChecked == true ? 1 :
                 RadioLargestSmallestMethod2.IsChecked == true ? 2 :
                 RadioLargestSmallestMethod3.IsChecked == true ? 3 : 1;
@@ -88,9 +90,37 @@ namespace AstSolutions
             ButtonLargestSmallestProcess_Click(sender,e);
         }
 
+        /// <summary>
+        /// Remove duplicates from string when process button clicked, using specified method.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonRemoveDuplicatesProcess_OnClick(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            // Determine method to use depending on radio button choice
+            int method = RadioRemoveDuplicatesMethod1.IsChecked == true ? 1 :
+                RadioRemoveDuplicatesMethod2.IsChecked == true ? 2 :
+                RadioRemoveDuplicatesMethod3.IsChecked == true ? 3 : 1;
+
+            try
+            {
+                TextRemoveDuplicateOutput.Text =
+                    RemoveDuplicates.RemoveDuplicatesFromString(TextRemoveDuplicateInput.Text, method);
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(this, exception.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        /// <summary>
+        /// Pass on click to Process button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RadioRemoveDuplicatesMethod1_OnClick(object sender, RoutedEventArgs e)
+        {
+            ButtonRemoveDuplicatesProcess_OnClick(sender, e);
         }
     }
 }
