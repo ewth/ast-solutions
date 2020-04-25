@@ -29,15 +29,19 @@ namespace AstSolutions
         /// <summary>
         /// Simple method to find the smallest and largest numbers in a set.
         /// </summary>
-        /// <param name="numbersOnePerLine"></param>
+        /// <param name="numbersOnePerLine">String of numbers separated by newlines</param>
         /// <param name="method"></param>
-        /// <returns></returns>
+        /// <returns>LargestSmallestCollection instantiated with largest and smallest value from list</returns>
         public static LargestSmallestCollection FindLargestSmallest(string numbersOnePerLine, int method = 1)
         {
+
+            // Wouldn't be necessary if we knew everyone is using Windows... but we don't, so my paranoia is justified
+            numbersOnePerLine = numbersOnePerLine.Replace("\r\n", "\n");
+
             // Get numbers first; discard non-numbers.
             // Using LINQ for simplicity.
             var numbers = numbersOnePerLine
-                .Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries)
+                .Split(new string[] { "\n" }, StringSplitOptions.RemoveEmptyEntries)
                 .Where(number => int.TryParse(number, out _))
                 .Select<string, int>(int.Parse)
                 .ToArray();
@@ -50,11 +54,9 @@ namespace AstSolutions
             // Three methods are used here.
             // This is just to demonstrate possible ways it could be done.
             // It's not intended to be comprehensive, but rather to demonstrate that I am aware there are multiple approaches to a simple problem.
-
             
             switch (method)
             {
-
                 // Method 1: Array.Min(), Array.Max() (default fallback)
                 case 1:
                     return new LargestSmallestCollection(numbers.Max(), numbers.Min());
