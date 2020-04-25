@@ -16,7 +16,7 @@ namespace AstSolutionsTests
             var largest = 5;
 
             // Act
-            var largestSmallest = new InterestingParts.LargestSmallest(largest, smallest);
+            var largestSmallest = new LargestSmallest.LargestSmallestCollection(largest, smallest);
 
             // Assert
             Assert.AreEqual(smallest, largestSmallest.Smallest);
@@ -33,7 +33,7 @@ namespace AstSolutionsTests
             var numbers = string.Join("\r\n", new[] {"1", "3", "5"});
 
             // Act
-            var result = InterestingParts.FindLargestSmallest(numbers, 1);
+            var result = LargestSmallest.FindLargestSmallest(numbers, 1);
 
             // Assert
             Assert.AreEqual(1, result.Smallest);
@@ -48,7 +48,7 @@ namespace AstSolutionsTests
             var numbers = string.Join("\r\n", new[] { "1", "3", "5" });
 
             // Act
-            var result = InterestingParts.FindLargestSmallest(numbers, 2);
+            var result = LargestSmallest.FindLargestSmallest(numbers, 2);
 
             // Assert
             Assert.AreEqual(1, result.Smallest);
@@ -63,7 +63,7 @@ namespace AstSolutionsTests
             var numbers = string.Join("\r\n", new[] { "1", "3", "5" });
 
             // Act
-            var result = InterestingParts.FindLargestSmallest(numbers, 3);
+            var result = LargestSmallest.FindLargestSmallest(numbers, 3);
 
             // Assert
             Assert.AreEqual(1, result.Smallest);
@@ -78,7 +78,7 @@ namespace AstSolutionsTests
             var numbers = string.Join("\r\n", new[] { "1", "3", "5" });
 
             // Act
-            var result = InterestingParts.FindLargestSmallest(numbers);
+            var result = LargestSmallest.FindLargestSmallest(numbers);
 
             // Assert
             Assert.AreEqual(1, result.Smallest);
@@ -93,7 +93,7 @@ namespace AstSolutionsTests
             var numbers = string.Join("\r\n", new[] { "a1", "3", "5" });
 
             // Act
-            var result = InterestingParts.FindLargestSmallest(numbers);
+            var result = LargestSmallest.FindLargestSmallest(numbers);
 
             // Assert
             Assert.AreEqual(3, result.Smallest);
@@ -110,7 +110,7 @@ namespace AstSolutionsTests
             // Act
             try
             {
-                var result = InterestingParts.FindLargestSmallest(numbers);
+                var result = LargestSmallest.FindLargestSmallest(numbers);
             }
             catch (System.ArgumentOutOfRangeException e)
             {

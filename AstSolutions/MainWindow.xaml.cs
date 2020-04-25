@@ -48,7 +48,7 @@ namespace AstSolutions
         {
 
 
-            InterestingParts.LargestSmallest largestSmallest;
+            LargestSmallest.LargestSmallestCollection largestSmallest;
             int method = RadioLargestSmallestMethod1.IsChecked == true ? 1 :
                 RadioLargestSmallestMethod2.IsChecked == true ? 2 :
                 RadioLargestSmallestMethod3.IsChecked == true ? 3 : 1;
@@ -56,7 +56,7 @@ namespace AstSolutions
             // Use of try...catch here is more to keep MessageBox within this class than because I'm concerned about exceptions
             try
             {
-                largestSmallest = InterestingParts.FindLargestSmallest(TextLargestSmallest.Text, method);
+                largestSmallest = LargestSmallest.FindLargestSmallest(TextLargestSmallest.Text, method);
             }
             catch (Exception exception)
             {

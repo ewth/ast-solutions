@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace AstSolutions
 {
-    public class InterestingParts
+    public class LargestSmallest
     {
 
         /// <summary>
         /// Simple class to hold result of finding largest/smallest number (q#1)
         /// </summary>
         /// <remarks>Instinctively I'd go smallest...largest, but the question explicitly words it "largest to smallest"</remarks>
-        public class LargestSmallest
+        public class LargestSmallestCollection
         {
             public int Largest { get; }
             public int Smallest { get; }
 
-            public LargestSmallest(int largest, int smallest)
+            public LargestSmallestCollection(int largest, int smallest)
             {
                 Largest = largest;
                 Smallest = smallest;
@@ -32,7 +32,7 @@ namespace AstSolutions
         /// <param name="numbersOnePerLine"></param>
         /// <param name="method"></param>
         /// <returns></returns>
-        public static LargestSmallest FindLargestSmallest(string numbersOnePerLine, int method = 1)
+        public static LargestSmallestCollection FindLargestSmallest(string numbersOnePerLine, int method = 1)
         {
             // Get numbers first; discard non-numbers.
             // Using LINQ for simplicity.
@@ -57,7 +57,7 @@ namespace AstSolutions
 
                 // Method 1: Array.Min(), Array.Max() (default fallback)
                 case 1:
-                    return new LargestSmallest(numbers.Max(), numbers.Min());
+                    return new LargestSmallestCollection(numbers.Max(), numbers.Min());
 
                 // Method 2: Iterate (gross)
                 case 2:
@@ -77,18 +77,18 @@ namespace AstSolutions
                             minNumber = Math.Min(minNumber, number);
                         }
                     }
-                    return new LargestSmallest( maxNumber, minNumber);
+                    return new LargestSmallestCollection( maxNumber, minNumber);
 
                 // Method 3: LINQ
                 case 3:
                     var largest = numbers.OrderByDescending(number => number).First();
                     var smallest = numbers.OrderBy(number => number).First();
-                    return new LargestSmallest(largest, smallest);
+                    return new LargestSmallestCollection(largest, smallest);
 
                 // Default is fallback to method 1.
                 // It feels correct...erer to stack case 1 and default, but then it reads case 2, case 3, case 1 and looks naff.
                 default:
-                    return new LargestSmallest(numbers.Max(), numbers.Min());
+                    return new LargestSmallestCollection(numbers.Max(), numbers.Min());
             }
         }
     }
