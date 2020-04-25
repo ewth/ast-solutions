@@ -87,10 +87,8 @@ namespace AstSolutions
                     var smallest = numbers.OrderBy(number => number).First();
                     return new LargestSmallestCollection(largest, smallest);
 
-                // Default is fallback to method 1.
-                // It feels correct...erer to stack case 1 and default, but then it reads case 2, case 3, case 1 and looks naff.
                 default:
-                    return new LargestSmallestCollection(numbers.Max(), numbers.Min());
+                    throw new NotImplementedException($"There is no method {method}.");
             }
         }
     }
