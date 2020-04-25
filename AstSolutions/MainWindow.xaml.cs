@@ -95,17 +95,17 @@ namespace AstSolutions
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ButtonRemoveDuplicatesProcess_OnClick(object sender, RoutedEventArgs e)
+        private void RemoveDuplicatesButtonProcess_OnClick(object sender, RoutedEventArgs e)
         {
             // Determine method to use depending on radio button choice
-            int method = RadioRemoveDuplicatesMethod1.IsChecked == true ? 1 :
-                RadioRemoveDuplicatesMethod2.IsChecked == true ? 2 :
-                RadioRemoveDuplicatesMethod3.IsChecked == true ? 3 : 1;
+            int method = RemoveDuplicatesRadioMethod1.IsChecked == true ? 1 :
+                RemoveDuplicatesRadioMethod2.IsChecked == true ? 2 :
+                RemoveDuplicatesRadioMethod3.IsChecked == true ? 3 : 1;
 
             try
             {
-                TextRemoveDuplicateOutput.Text =
-                    RemoveDuplicates.RemoveDuplicatesFromString(TextRemoveDuplicateInput.Text, method);
+                RemoveDuplicateTextOutput.Text =
+                    RemoveDuplicates.RemoveDuplicatesFromString(RemoveDuplicateTextInput.Text, method);
             }
             catch (Exception exception)
             {
@@ -118,9 +118,22 @@ namespace AstSolutions
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void RadioRemoveDuplicatesMethod1_OnClick(object sender, RoutedEventArgs e)
+        private void RemoveDuplicatesRadioMethod1_OnClick(object sender, RoutedEventArgs e)
         {
-            ButtonRemoveDuplicatesProcess_OnClick(sender, e);
+            RemoveDuplicatesButtonProcess_OnClick(sender, e);
+        }
+
+        /// <summary>
+        ///  Consider enter key button press.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RemoveDuplicateTextInput_OnKeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                RemoveDuplicatesButtonProcess_OnClick(sender, null);
+            }
         }
 
         /// <summary>
@@ -144,6 +157,25 @@ namespace AstSolutions
             }
         }
 
+        /// <summary>
+        /// Consider Enter as a button click.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AnagramTextFirst_OnKeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                AnagramButtonCheck_Click(sender, null);
+            }
+        }
+
+
+        /// <summary>
+        /// Check a phone number is valid on button press.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MobileButtonCheck_Click(object sender, RoutedEventArgs e)
         {
             if (PhoneNumber.IsValidPhonenumber(MobileTextNumber.Text))
@@ -159,5 +191,20 @@ namespace AstSolutions
                 MobileLabelResult.FontSize = 14;
             }
         }
+
+        /// <summary>
+        /// Consider enter key button press.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MobileTextNumber_OnKeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                MobileButtonCheck_Click(sender, null);
+            }
+        }
+
+
     }
 }

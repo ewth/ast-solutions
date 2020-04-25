@@ -23,11 +23,11 @@
         </GroupBox>
         <GroupBox Header="2. Remove Duplicate Characters" HorizontalAlignment="Left" Height="195" Margin="428,10,0,0" VerticalAlignment="Top" Width="413">
             <Grid HorizontalAlignment="Left" Height="175" VerticalAlignment="Top" Width="403" Margin="0,0,-2,-3">
-                <TextBox x:Name="RemoveDuplicateTextInput" HorizontalAlignment="Left" Height="80" Margin="10,29,0,0" TextWrapping="Wrap" Text="ABCDEFG, AAA BBB, CCC, A, B, C" VerticalAlignment="Top" Width="307" VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True"/>
+                <TextBox x:Name="RemoveDuplicateTextInput" HorizontalAlignment="Left" Height="80" Margin="10,29,0,0" TextWrapping="Wrap" Text="ABCDEFG, AAA BBB, CCC, A, B, C" VerticalAlignment="Top" Width="307" VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True" KeyUp="RemoveDuplicateTextInput_OnKeyUp"/>
                 <Label Content="Input:" HorizontalAlignment="Left" Margin="0,3,0,0" VerticalAlignment="Top"/>
                 <Label Content="Output:" HorizontalAlignment="Left" Margin="0,108,0,0" VerticalAlignment="Top"/>
                 <TextBox x:Name="RemoveDuplicateTextOutput" HorizontalAlignment="Left" Height="36" Margin="10,134,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="383" VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True" IsEnabled="False"/>
-                <Button x:Name="RemoveDuplicatesButtonProcess" Content="Process" HorizontalAlignment="Left" Margin="322,89,0,0" VerticalAlignment="Top" Width="71" Click="RemoveDuplicatesButtonProcess_OnClick" IsDefault="True"/>
+                <Button x:Name="RemoveDuplicatesButtonProcess" Content="Process" HorizontalAlignment="Left" Margin="322,89,0,0" VerticalAlignment="Top" Width="71" Click="RemoveDuplicatesButtonProcess_OnClick"/>
                 <RadioButton x:Name="RemoveDuplicatesRadioMethod1" Content="Method 1" HorizontalAlignment="Left" Margin="322,29,0,0" VerticalAlignment="Top" GroupName="RemoveDuplicatesMethod" IsChecked="True" Click="RemoveDuplicatesRadioMethod1_OnClick"/>
                 <RadioButton x:Name="RemoveDuplicatesRadioMethod2" Content="Method 2" HorizontalAlignment="Left" Margin="322,49,0,0" VerticalAlignment="Top" GroupName="RemoveDuplicatesMethod" Click="RemoveDuplicatesRadioMethod1_OnClick"/>
                 <RadioButton x:Name="RemoveDuplicatesRadioMethod3" Content="Method 3" HorizontalAlignment="Left" Margin="322,69,0,0" VerticalAlignment="Top" GroupName="RemoveDuplicatesMethod" Click="RemoveDuplicatesRadioMethod1_OnClick"/>
@@ -37,9 +37,9 @@
             <Grid HorizontalAlignment="Left" Height="156" VerticalAlignment="Top" Width="390">
                 <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Note that case is ignored, and all non-alphabetic characters are removed." VerticalAlignment="Top"/>
                 <Label Content="Is this:" HorizontalAlignment="Left" Margin="10,47,0,0" VerticalAlignment="Top"/>
-                <TextBox x:Name="AnagramTextFirst" HorizontalAlignment="Left" Height="23" Margin="112,51,0,0" TextWrapping="Wrap" Text="debit card" VerticalAlignment="Top" Width="268"/>
+                <TextBox x:Name="AnagramTextFirst" HorizontalAlignment="Left" Height="23" Margin="112,51,0,0" TextWrapping="Wrap" Text="debit card" VerticalAlignment="Top" Width="268" KeyUp="AnagramTextFirst_OnKeyUp"/>
                 <Label Content="An anagram of:" HorizontalAlignment="Left" Margin="10,78,0,0" VerticalAlignment="Top"/>
-                <TextBox x:Name="AnagramTextSecond" HorizontalAlignment="Left" Height="23" Margin="112,81,0,0" TextWrapping="Wrap" Text="bad credit" VerticalAlignment="Top" Width="268"/>
+                <TextBox x:Name="AnagramTextSecond" HorizontalAlignment="Left" Height="23" Margin="112,81,0,0" TextWrapping="Wrap" Text="bad credit" VerticalAlignment="Top" Width="268" KeyUp="AnagramTextFirst_OnKeyUp"/>
                 <Button x:Name="AnagramButtonCheck" Content="Check" HorizontalAlignment="Left" Margin="305,114,0,0" VerticalAlignment="Top" Width="75" Click="AnagramButtonCheck_Click"/>
                 <Label x:Name="AnagramLabelResult" Content="Nothing checked yet." HorizontalAlignment="Left" Margin="10,111,0,0" VerticalAlignment="Top"/>
             </Grid>
@@ -47,7 +47,7 @@
         <GroupBox Header="4. Valid AU Mobiles" HorizontalAlignment="Left" Height="184" Margin="428,205,0,0" VerticalAlignment="Top" Width="413">
             <Grid HorizontalAlignment="Left" Height="165" VerticalAlignment="Top" Width="403" Margin="0,0,-2,-4">
                 <Label Content="Mobile Number:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-                <TextBox x:Name="MobileTextNumber" HorizontalAlignment="Left" Height="23" Margin="20,36,0,0" TextWrapping="Wrap" Text="0412 123 123" VerticalAlignment="Top" Width="373"/>
+                <TextBox x:Name="MobileTextNumber" HorizontalAlignment="Left" Height="23" Margin="20,36,0,0" TextWrapping="Wrap" Text="0412 123 123" VerticalAlignment="Top" Width="373" KeyUp="MobileTextNumber_OnKeyUp"/>
                 <Button x:Name="MobileButtonCheck" Content="Check" HorizontalAlignment="Left" Margin="318,64,0,0" VerticalAlignment="Top" Width="75" Click="MobileButtonCheck_Click" />
                 <Label x:Name="MobileLabelResult" Content="Nothing checked yet." HorizontalAlignment="Left" Margin="20,66,0,0" VerticalAlignment="Top"/>
             </Grid>
