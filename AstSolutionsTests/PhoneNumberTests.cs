@@ -150,5 +150,32 @@ namespace AstSolutionsTests
             // Assert
             Assert.IsFalse(isValid);
         }
+
+        [TestMethod]
+        public void PhoneNumber_CheckBadPhoneNumberTooManyDigits_ShouldReturnFalse()
+        {
+            // Arrange
+            var phoneNumber = "04121231231";
+
+            // Act
+            var isValid = PhoneNumber.IsValidPhonenumber(phoneNumber);
+
+            // Assert
+            Assert.IsFalse(isValid);
+        }
+
+        [TestMethod]
+        public void PhoneNumber_CheckBadPhoneNumberInternationalTooManyDigits_ShouldReturnFalse()
+        {
+            // Arrange
+            var phoneNumber = "+6104121231231";
+
+            // Act
+            var isValid = PhoneNumber.IsValidPhonenumber(phoneNumber);
+
+            // Assert
+            Assert.IsFalse(isValid);
+        }
+
     }
 }
