@@ -27,7 +27,7 @@ namespace AstSolutions
         /// Simple method to find the smallest and largest numbers in a set.
         /// </summary>
         /// <param name="numbersOnePerLine">String of numbers separated by newlines</param>
-        /// <param name="method"></param>
+        /// <param name="method">Method to use (1, 2, or 3), defaults to 1</param>
         /// <returns>LargestSmallestResult instantiated with largest and smallest value from list</returns>
         public static LargestSmallestResult FindLargestSmallest(string numbersOnePerLine, int method = 1)
         {
@@ -56,37 +56,68 @@ namespace AstSolutions
             {
                 // Method 1: Array.Min(), Array.Max() (default fallback)
                 case 1:
-                    return new LargestSmallestResult(numbers.Max(), numbers.Min());
+                    return LargestSmallestMethod1(numbers);
 
                 // Method 2: Iterate (gross)
                 case 2:
-                    int maxNumber = 0, minNumber = 0;
-                    for (var i = 0; i < numbers.Length; i++)
-                    {
-                        var number = numbers[i];
-                        // Init first time
-                        if (i == 0)
-                        {
-                            maxNumber = number;
-                            minNumber = number;
-                        }
-                        else
-                        {
-                            maxNumber = Math.Max(maxNumber, number);
-                            minNumber = Math.Min(minNumber, number);
-                        }
-                    }
-                    return new LargestSmallestResult( maxNumber, minNumber);
+                    return LargestSmallestMethod2(numbers);
 
                 // Method 3: LINQ
                 case 3:
-                    var largest = numbers.OrderByDescending(number => number).First();
-                    var smallest = numbers.OrderBy(number => number).First();
-                    return new LargestSmallestResult(largest, smallest);
+                    return LargestSmallestMethod1(numbers);
 
                 default:
                     throw new NotImplementedException($"There is no method {method}.");
             }
+        }
+
+        /// <summary>
+        /// Find largest and smallest using simple array methods
+        /// </summary>
+        /// <param name="numbers">Integer array of numbers</param>
+        /// <returns>Instantiated LargestSmallestResult class with resutls</returns>
+        private static LargestSmallestResult LargestSmallestMethod1(int[] numbers)
+        {
+            return new LargestSmallestResult(numbers.Max(), numbers.Min());
+        }
+
+        /// <summary>
+        /// Find largest and smallest by iterating over array and comparing entries
+        /// </summary>
+        /// <param name="numbers">Integer array of numbers</param>
+        /// <returns>Instantiated LargestSmallestResult class with resutls</returns>
+        private static LargestSmallestResult LargestSmallestMethod2(int[] numbers)
+        {
+            int maxNumber = 0, minNumber = 0;
+            for (var i = 0; i < numbers.Length; i++)
+            {
+                var number = numbers[i];
+                // Init first time
+                if (i == 0)
+                {
+                    maxNumber = number;
+                    minNumber = number;
+                }
+                else
+                {
+                    maxNumber = Math.Max(maxNumber, number);
+                    minNumber = Math.Min(minNumber, number);
+                }
+            }
+            return new LargestSmallestResult(maxNumber, minNumber);
+
+        }
+
+        /// <summary>
+        /// Find largest and smallest by using LINQ to order the values in appropriate direction and taking first result
+        /// </summary>
+        /// <param name="numbers">Integer array of numbers</param>
+        /// <returns>Instantiated LargestSmallestResult class with resutls</returns>
+        private static LargestSmallestResult LargestSmallestMethod3(int[] numbers)
+        {
+            var largest = numbers.OrderByDescending(number => number).First();
+            var smallest = numbers.OrderBy(number => number).First();
+            return new LargestSmallestResult(largest, smallest);
         }
     }
 }
