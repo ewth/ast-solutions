@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AstSolutions
 {
-    class InterestingParts
+    public class InterestingParts
     {
 
         /// <summary>
@@ -44,7 +44,7 @@ namespace AstSolutions
 
             if (numbers.Length < 1)
             {
-                throw new Exception("No valid integers were found in the provided values. Please check them and try again.");
+                throw new ArgumentOutOfRangeException("numbersOnePerLine", "No valid integers were found in the provided values. Please check them and try again.");
             }
 
             // Three methods are used here.
