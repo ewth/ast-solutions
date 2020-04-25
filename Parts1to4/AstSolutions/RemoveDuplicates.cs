@@ -28,10 +28,10 @@ namespace AstSolutions
         }
 
         /// <summary>
-        /// Method 1: Use a combination of LINQ and string.Join()
+        /// Use a combination of LINQ and string.Join() to collect distinct characters.
         /// </summary>
-        /// <param name="inputString"></param>
-        /// <returns></returns>
+        /// <param name="inputString">Input string to remove duplicate characters from.</param>
+        /// <returns>String with duplicate characters removed</returns>
         /// <remarks>The best way, in my opinion, as it is no less efficient than other methods (more so than some), and requires minimal code.</remarks>
         private static string RemoveDuplicatesMethod1(string inputString)
         {
@@ -40,10 +40,10 @@ namespace AstSolutions
 
 
         /// <summary>
-        /// Method 2: The most spartan way of doing it, simply iterating over string and adding character if it doesn't already appear in result.
+        /// The most spartan way of doing it, simply iterating over string and adding character if it doesn't already appear in result.
         /// </summary>
-        /// <param name="inputString"></param>
-        /// <returns></returns>
+        /// <param name="inputString">Input string to remove duplicate characters from.</param>
+        /// <returns>String with duplicate characters removed</returns>
         private static string RemoveDuplicatesMethod2(string inputString)
         {
             var outputString = "";
@@ -60,10 +60,10 @@ namespace AstSolutions
         }
 
         /// <summary>
-        /// Method 3: Uses an int array to track used ASCII characters and a string builder to store the result.
+        /// Uses an int array to track used ASCII characters and a string builder to store the result.
         /// </summary>
-        /// <param name="inputString"></param>
-        /// <returns>String stripped of duplicate characters</returns>
+        /// <param name="inputString">Input string to remove duplicate characters from.</param>
+        /// <returns>String with duplicate characters removed</returns>
         private static string RemoveDuplicatesMethod3(string inputString)
         {
             var usedCharacters = new int[256];
@@ -81,6 +81,5 @@ namespace AstSolutions
 
             return outputString.ToString();
         }
-        
     }
 }
