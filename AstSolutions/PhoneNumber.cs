@@ -20,9 +20,9 @@ namespace AstSolutions
         public static bool IsValidPhonenumber(string phoneNumber)
         {
 
-            // Develop regex to match valid phonenumber
-            // Restrict phone number to only numbers and +
-            phoneNumber = Regex.Replace(phoneNumber, "[^0-9+]", "");
+            // Develop regex to match valid phone number
+            // Remove any spaces or dashes from the phone number
+            phoneNumber = Regex.Replace(phoneNumber, "[- ]", "");
             return Regex.IsMatch(phoneNumber, "^(([+]?(614|6104))|04)([0-9]{8,8})$");
         }
     }
