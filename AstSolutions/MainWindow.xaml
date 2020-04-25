@@ -33,6 +33,17 @@
                 <RadioButton x:Name="RadioRemoveDuplicatesMethod3" Content="Method 3" HorizontalAlignment="Left" Margin="322,69,0,0" VerticalAlignment="Top" GroupName="RemoveDuplicatesMethod" Click="RadioRemoveDuplicatesMethod1_OnClick"/>
             </Grid>
         </GroupBox>
+        <GroupBox Header="3. Anagrams" HorizontalAlignment="Left" Height="184" Margin="10,205,0,0" VerticalAlignment="Top" Width="413">
+            <Grid HorizontalAlignment="Left" Height="156" VerticalAlignment="Top" Width="390">
+                <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Note that case is ignored, and all non-alphabetic characters are removed." VerticalAlignment="Top"/>
+                <Label Content="Is this:" HorizontalAlignment="Left" Margin="10,47,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="AnagramTextFirst" HorizontalAlignment="Left" Height="23" Margin="112,51,0,0" TextWrapping="Wrap" Text="debit card" VerticalAlignment="Top" Width="268"/>
+                <Label Content="An anagram of:" HorizontalAlignment="Left" Margin="10,78,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="AnagramTextSecond" HorizontalAlignment="Left" Height="23" Margin="112,81,0,0" TextWrapping="Wrap" Text="bad credit" VerticalAlignment="Top" Width="268"/>
+                <Button x:Name="AnagramButtonCheck" Content="Check" HorizontalAlignment="Left" Margin="305,114,0,0" VerticalAlignment="Top" Width="75" Click="AnagramButtonCheck_Click"/>
+                <Label x:Name="AnagramLabelResult" Content="Nothing checked yet." HorizontalAlignment="Left" Margin="10,111,0,0" VerticalAlignment="Top"/>
+            </Grid>
+        </GroupBox>
 
     </Grid>
 </Window>

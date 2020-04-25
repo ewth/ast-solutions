@@ -122,5 +122,26 @@ namespace AstSolutions
         {
             ButtonRemoveDuplicatesProcess_OnClick(sender, e);
         }
+
+        /// <summary>
+        /// Determine anagram status on Check click.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AnagramButtonCheck_Click(object sender, RoutedEventArgs e)
+        {
+            if (Anagram.IsAnagram(AnagramTextFirst.Text, AnagramTextSecond.Text))
+            {
+                AnagramLabelResult.Content = "Yes!";
+                AnagramLabelResult.Foreground = Brushes.DarkGreen;
+                AnagramLabelResult.FontSize = 24;
+            }
+            else
+            {
+                AnagramLabelResult.Content = "No.";
+                AnagramLabelResult.Foreground = Brushes.DarkRed;
+                AnagramLabelResult.FontSize = 14;
+            }
+        }
     }
 }
