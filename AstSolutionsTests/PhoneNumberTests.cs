@@ -100,7 +100,7 @@ namespace AstSolutionsTests
         }
 
         [TestMethod]
-        public void PhoneNumber_CheckFormattedInternationalPhoneNumberWithPlusAndZero_ShouldReturnTrue()
+        public void PhoneNumber_CheckBadlyFormattedInternationalPhoneNumberWithPlusAndZero_ShouldReturnFalse()
         {
             // Arrange
             var phoneNumber = "+610412123123";
@@ -109,7 +109,7 @@ namespace AstSolutionsTests
             var isValid = PhoneNumber.IsValidPhonenumber(phoneNumber);
 
             // Assert
-            Assert.IsTrue(isValid);
+            Assert.IsFalse(isValid);
         }
 
         [TestMethod]
