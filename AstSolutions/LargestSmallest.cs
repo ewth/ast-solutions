@@ -13,12 +13,12 @@ namespace AstSolutions
         /// Simple class to hold result of finding largest/smallest number (q#1)
         /// </summary>
         /// <remarks>Instinctively I'd go smallest...largest, but the question explicitly words it "largest to smallest"</remarks>
-        public class LargestSmallestCollection
+        public class LargestSmallestResult
         {
             public int Largest { get; }
             public int Smallest { get; }
 
-            public LargestSmallestCollection(int largest, int smallest)
+            public LargestSmallestResult(int largest, int smallest)
             {
                 Largest = largest;
                 Smallest = smallest;
@@ -31,8 +31,8 @@ namespace AstSolutions
         /// </summary>
         /// <param name="numbersOnePerLine">String of numbers separated by newlines</param>
         /// <param name="method"></param>
-        /// <returns>LargestSmallestCollection instantiated with largest and smallest value from list</returns>
-        public static LargestSmallestCollection FindLargestSmallest(string numbersOnePerLine, int method = 1)
+        /// <returns>LargestSmallestResult instantiated with largest and smallest value from list</returns>
+        public static LargestSmallestResult FindLargestSmallest(string numbersOnePerLine, int method = 1)
         {
 
             // Wouldn't be necessary if we knew everyone is using Windows... but we don't, so my paranoia is justified
@@ -59,7 +59,7 @@ namespace AstSolutions
             {
                 // Method 1: Array.Min(), Array.Max() (default fallback)
                 case 1:
-                    return new LargestSmallestCollection(numbers.Max(), numbers.Min());
+                    return new LargestSmallestResult(numbers.Max(), numbers.Min());
 
                 // Method 2: Iterate (gross)
                 case 2:
@@ -79,13 +79,13 @@ namespace AstSolutions
                             minNumber = Math.Min(minNumber, number);
                         }
                     }
-                    return new LargestSmallestCollection( maxNumber, minNumber);
+                    return new LargestSmallestResult( maxNumber, minNumber);
 
                 // Method 3: LINQ
                 case 3:
                     var largest = numbers.OrderByDescending(number => number).First();
                     var smallest = numbers.OrderBy(number => number).First();
-                    return new LargestSmallestCollection(largest, smallest);
+                    return new LargestSmallestResult(largest, smallest);
 
                 default:
                     throw new NotImplementedException($"There is no method {method}.");

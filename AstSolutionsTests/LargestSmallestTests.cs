@@ -16,7 +16,7 @@ namespace AstSolutionsTests
             var largest = 5;
 
             // Act
-            var largestSmallest = new LargestSmallest.LargestSmallestCollection(largest, smallest);
+            var largestSmallest = new LargestSmallest.LargestSmallestResult(largest, smallest);
 
             // Assert
             Assert.AreEqual(smallest, largestSmallest.Smallest);
