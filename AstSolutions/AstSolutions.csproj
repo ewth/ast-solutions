@@ -56,6 +56,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Anagram.cs" />
+    <Compile Include="PhoneNumber.cs" />
     <Compile Include="RemoveDuplicates.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
