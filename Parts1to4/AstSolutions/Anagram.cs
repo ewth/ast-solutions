@@ -7,9 +7,9 @@ namespace AstSolutions
         /// <summary>
         /// Check whether two strings are anagrams of each other.
         /// </summary>
-        /// <param name="firstString"></param>
-        /// <param name="secondString"></param>
-        /// <returns>True if two strings are anagrams, false otherwise</returns>
+        /// <param name="firstString">First string, to check whether is anagram of second</param>
+        /// <param name="secondString">Second string, to check whether is anagram of first</param>
+        /// <returns>True if two strings are anagrams, False otherwise</returns>
         /// <remarks>Only Latin alphabetical characters are considered.</remarks>
         /// <remarks>Stings are treated as case insensitive.</remarks>
         /// <remarks>The algorithm is based on [ http://javabypatel.blogspot.com/2015/10/check-strings-are-anagrams.html ]</remarks>
@@ -45,6 +45,11 @@ namespace AstSolutions
             return true;
         }
 
+        /// <summary>
+        /// Simple method to track which alphabet characters are used within a string.
+        /// </summary>
+        /// <param name="inputString">String to check</param>
+        /// <returns>int[26] array of characters and how many times they are used</returns>
         private static int[] CharacterCount(string inputString)
         {
             var characterCount = new int[26];
