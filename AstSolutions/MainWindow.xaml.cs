@@ -143,5 +143,21 @@ namespace AstSolutions
                 AnagramLabelResult.FontSize = 14;
             }
         }
+
+        private void MobileButtonCheck_Click(object sender, RoutedEventArgs e)
+        {
+            if (PhoneNumber.IsValidPhonenumber(MobileTextNumber.Text))
+            {
+                MobileLabelResult.Content = "Valid!";
+                MobileLabelResult.Foreground = Brushes.DarkGreen;
+                MobileLabelResult.FontSize = 24;
+            }
+            else
+            {
+                MobileLabelResult.Content = "Invalid.";
+                MobileLabelResult.Foreground = Brushes.DarkRed;
+                MobileLabelResult.FontSize = 14;
+            }
+        }
     }
 }
