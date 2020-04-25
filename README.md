@@ -1,10 +1,8 @@
 # AST Solutions
 ## Full-Stack Senior Developer Technical Assessment
 
-This private repository contains the solutions for the full-stack senior developer technical assessment as issued by AST Solutions.
+This repository contains my solutions to parts 1-4 of the Technical Assessment as issued by AST Solutions.
 
-All answers are my own. This work belongs to me, and is in response to AST Solutions.
+Part 5 will be in another repository, as it its own app.
 
-This repository is private and should only be viewed by AST Solutions.
-
-- Ewan Thompson.
+**Ewan Thompson**
