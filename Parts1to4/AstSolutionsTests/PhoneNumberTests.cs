@@ -14,7 +14,7 @@ namespace AstSolutionsTests
             var phoneNumber = "0412123123";
 
             // Act
-            var isValid = PhoneNumber.IsValidPhonenumber(phoneNumber);
+            var isValid = PhoneNumber.IsValidPhoneNumber(phoneNumber);
 
             // Assert
             Assert.IsTrue(isValid);
@@ -27,7 +27,7 @@ namespace AstSolutionsTests
             var phoneNumber = "412123123";
 
             // Act
-            var isValid = PhoneNumber.IsValidPhonenumber(phoneNumber);
+            var isValid = PhoneNumber.IsValidPhoneNumber(phoneNumber);
 
             // Assert
             Assert.IsFalse(isValid);
@@ -40,7 +40,7 @@ namespace AstSolutionsTests
             var phoneNumber = "0812123123";
 
             // Act
-            var isValid = PhoneNumber.IsValidPhonenumber(phoneNumber);
+            var isValid = PhoneNumber.IsValidPhoneNumber(phoneNumber);
 
             // Assert
             Assert.IsFalse(isValid);
@@ -53,7 +53,7 @@ namespace AstSolutionsTests
             var phoneNumber = "0412 123 123";
 
             // Act
-            var isValid = PhoneNumber.IsValidPhonenumber(phoneNumber);
+            var isValid = PhoneNumber.IsValidPhoneNumber(phoneNumber);
 
             // Assert
             Assert.IsTrue(isValid);
@@ -66,7 +66,7 @@ namespace AstSolutionsTests
             var phoneNumber = "0412-123-123";
 
             // Act
-            var isValid = PhoneNumber.IsValidPhonenumber(phoneNumber);
+            var isValid = PhoneNumber.IsValidPhoneNumber(phoneNumber);
 
             // Assert
             Assert.IsTrue(isValid);
@@ -79,7 +79,7 @@ namespace AstSolutionsTests
             var phoneNumber = "041 212 312 3";
 
             // Act
-            var isValid = PhoneNumber.IsValidPhonenumber(phoneNumber);
+            var isValid = PhoneNumber.IsValidPhoneNumber(phoneNumber);
 
             // Assert
             Assert.IsTrue(isValid);
@@ -93,7 +93,7 @@ namespace AstSolutionsTests
             var phoneNumber = "+61412123123";
 
             // Act
-            var isValid = PhoneNumber.IsValidPhonenumber(phoneNumber);
+            var isValid = PhoneNumber.IsValidPhoneNumber(phoneNumber);
 
             // Assert
             Assert.IsTrue(isValid);
@@ -106,7 +106,7 @@ namespace AstSolutionsTests
             var phoneNumber = "+610412123123";
 
             // Act
-            var isValid = PhoneNumber.IsValidPhonenumber(phoneNumber);
+            var isValid = PhoneNumber.IsValidPhoneNumber(phoneNumber);
 
             // Assert
             Assert.IsFalse(isValid);
@@ -119,7 +119,7 @@ namespace AstSolutionsTests
             var phoneNumber = "61412123123";
 
             // Act
-            var isValid = PhoneNumber.IsValidPhonenumber(phoneNumber);
+            var isValid = PhoneNumber.IsValidPhoneNumber(phoneNumber);
 
             // Assert
             Assert.IsTrue(isValid);
@@ -132,7 +132,7 @@ namespace AstSolutionsTests
             var phoneNumber = "+61112123123";
 
             // Act
-            var isValid = PhoneNumber.IsValidPhonenumber(phoneNumber);
+            var isValid = PhoneNumber.IsValidPhoneNumber(phoneNumber);
 
             // Assert
             Assert.IsFalse(isValid);
@@ -145,7 +145,7 @@ namespace AstSolutionsTests
             var phoneNumber = "+62412123123";
 
             // Act
-            var isValid = PhoneNumber.IsValidPhonenumber(phoneNumber);
+            var isValid = PhoneNumber.IsValidPhoneNumber(phoneNumber);
 
             // Assert
             Assert.IsFalse(isValid);
@@ -158,7 +158,7 @@ namespace AstSolutionsTests
             var phoneNumber = "04121231231";
 
             // Act
-            var isValid = PhoneNumber.IsValidPhonenumber(phoneNumber);
+            var isValid = PhoneNumber.IsValidPhoneNumber(phoneNumber);
 
             // Assert
             Assert.IsFalse(isValid);
@@ -171,7 +171,7 @@ namespace AstSolutionsTests
             var phoneNumber = "+6104121231231";
 
             // Act
-            var isValid = PhoneNumber.IsValidPhonenumber(phoneNumber);
+            var isValid = PhoneNumber.IsValidPhoneNumber(phoneNumber);
 
             // Assert
             Assert.IsFalse(isValid);
@@ -184,7 +184,7 @@ namespace AstSolutionsTests
             var phoneNumber = "0412 123a123";
 
             // Act
-            var isValid = PhoneNumber.IsValidPhonenumber(phoneNumber);
+            var isValid = PhoneNumber.IsValidPhoneNumber(phoneNumber);
 
             // Assert
             Assert.IsFalse(isValid);

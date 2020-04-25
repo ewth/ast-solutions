@@ -168,7 +168,7 @@ namespace AstSolutions
         /// <param name="e"></param>
         private void MobileButtonCheck_Click(object sender, RoutedEventArgs e)
         {
-            if (PhoneNumber.IsValidPhonenumber(MobileTextNumber.Text))
+            if (PhoneNumber.IsValidPhoneNumber(MobileTextNumber.Text))
             {
                 MobileLabelResult.Content = "Valid!";
                 MobileLabelResult.Foreground = Brushes.DarkGreen;
