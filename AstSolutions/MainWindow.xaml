@@ -19,7 +19,7 @@
                 <RadioButton x:Name="RadioLargestSmallestMethod3" Content="LINQ" HorizontalAlignment="Left" Margin="91,90,0,0" VerticalAlignment="Top" GroupName="LargestSmallestMethod" Click="RadioLargestSmallestMethod1_OnClick"/>
                 <Button x:Name="ButtonLargestSmallestProcess" Content="Process" HorizontalAlignment="Left" Margin="91,110,0,0" VerticalAlignment="Top" Width="75" Click="ButtonLargestSmallestProcess_Click"/>
                 <Label Content="Enter integers, one per line." HorizontalAlignment="Left" Height="29" Margin="2,0,0,0" VerticalAlignment="Top" Width="164"/>
-                <Label x:Name="LabelLargestSmallestResult" Content="Method: 0, Largest: 12, Smallest:123123123" HorizontalAlignment="Left" Height="33" Margin="10,135,0,0" VerticalAlignment="Top" Width="378"/>
+                <Label x:Name="LabelLargestSmallestResult" Content="No result yet." HorizontalAlignment="Left" Height="33" Margin="10,135,0,0" VerticalAlignment="Top" Width="378"/>
             </Grid>
         </GroupBox>
 

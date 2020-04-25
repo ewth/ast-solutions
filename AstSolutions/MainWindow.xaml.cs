@@ -64,8 +64,19 @@ namespace AstSolutions
                 return;
             }
 
-            LabelLargestSmallestResult.Content =
-                $"Method {method}: Largest: {largestSmallest.Largest}, Smallest: {largestSmallest.Smallest}";
+            // Method: 0, Largest: 11231231231231231231232, Smallest:1231231
+            var resultString = $"Method {method}: Largest: {largestSmallest.Largest}, Smallest: {largestSmallest.Smallest}";
+            // Over about 60 characters causes the label to go skewiff. Shouldn't get to 60 characters but... we've dealt with real users before.
+            if (resultString.Length > 60)
+            {
+                resultString = $"M{method}: L{largestSmallest.Largest} S{largestSmallest.Smallest}";
+                if (resultString.Length > 60)
+                {
+                    resultString = resultString.Substring(0, 57) + "...";
+                }
+            }
+
+            LabelLargestSmallestResult.Content = resultString;
 
         }
 
