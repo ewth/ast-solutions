@@ -34,7 +34,7 @@ namespace AstSolutions
             {
                 randomNumbers.Add(random.Next(1,99));
             }
-            TextLargestSmallest.Text = string.Join("\r\n", randomNumbers);
+            LargestSmallestText.Text = string.Join("\r\n", randomNumbers);
         }
 
         /// <summary>
@@ -49,14 +49,14 @@ namespace AstSolutions
             LargestSmallest.LargestSmallestResult largestSmallest;
 
             // Determine method to use depending on radio button choice
-            int method = RadioLargestSmallestMethod1.IsChecked == true ? 1 :
-                RadioLargestSmallestMethod2.IsChecked == true ? 2 :
-                RadioLargestSmallestMethod3.IsChecked == true ? 3 : 1;
+            int method = LargestSmallestRadioMethod1.IsChecked == true ? 1 :
+                LargestSmallestRadioMethod2.IsChecked == true ? 2 :
+                LargestSmallestRadioMethod3.IsChecked == true ? 3 : 1;
 
             // Use of try...catch here is more to keep MessageBox within this class than because I'm concerned about exceptions
             try
             {
-                largestSmallest = LargestSmallest.FindLargestSmallest(TextLargestSmallest.Text, method);
+                largestSmallest = LargestSmallest.FindLargestSmallest(LargestSmallestText.Text, method);
             }
             catch (Exception exception)
             {
@@ -76,7 +76,7 @@ namespace AstSolutions
                 }
             }
 
-            LabelLargestSmallestResult.Content = resultString;
+            LargestSmallestLabelResult.Content = resultString;
 
         }
 
@@ -85,7 +85,7 @@ namespace AstSolutions
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void RadioLargestSmallestMethod1_OnClick(object sender, RoutedEventArgs e)
+        private void LargestSmallestRadioMethod1_OnClick(object sender, RoutedEventArgs e)
         {
             ButtonLargestSmallestProcess_Click(sender,e);
         }
