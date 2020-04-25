@@ -25,21 +25,19 @@ namespace AstSolutions
         {
             InitializeComponent();
 
-            // Generate some randomish numbers for 1
+            // Generate some randomish numbers for Largest Smallest
             var random = new Random();
             var randomNumbers = new List<int>();
-
             // 6 was specially chosen by randomly dragging a textbox and it happened to fit 6 lines. SCIENCE.
             for (var i = 0; i < 6; i++)
             {
                 randomNumbers.Add(random.Next(1,99));
             }
-
             TextLargestSmallest.Text = string.Join("\r\n", randomNumbers);
         }
 
         /// <summary>
-        /// Find largest and smallest integer from text field.
+        /// Find largest and smallest integer from text field (when Process button clicked).
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -81,13 +79,18 @@ namespace AstSolutions
         }
 
         /// <summary>
-        /// Just pass on click event to Process button.
+        /// Just pass on click event to Process button when a group radio button is clicked.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void RadioLargestSmallestMethod1_OnClick(object sender, RoutedEventArgs e)
         {
             ButtonLargestSmallestProcess_Click(sender,e);
+        }
+
+        private void ButtonRemoveDuplicatesProcess_OnClick(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
         }
     }
 }
